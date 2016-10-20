@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.service('checkin', ['$q', '$http', function($q, $http){
+/*.service('checkin', ['$q', '$http', function($q, $http){
   var api_url= 'https://sheetsu.com/apis/v1.0/73e7d27138f0';
 
   var currentID = 1;
@@ -28,7 +28,7 @@ angular.module('starter.services', [])
   };
 
   return ret;
-}])
+}]) */
 
 
 .factory('Chats', function() {
