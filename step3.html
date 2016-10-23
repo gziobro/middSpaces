@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script language="javascript" src="scripts/jquery.imagemapster.js"></script>
+</head>
+<body>
+    <img src="images/F4OutlineA.gif" usemap="#fourth">
+    <map id="fourth_map" name="fourth">
+    	<area shape="rect" data-group="tables" name="wwing" coords="3,62,11,77" color="green" href="#wwing">
+    	<area shape="rect" data-group="tables" name="nwing" coords="237,12,260,21" color="green" href="#nwing">
+    	<area shape="rect" data-group="tables" name="ewing" coords="406,46,414,61" color="green" href="#ewing">
+    	<area shape="rect" data-group="tables" name="swing" coords="264,192,287,203" color="green" href="#swing">
+    	<area shape="rect" data-group="tables" name="center" coords="251,95,270,109" color="green" href="#center">
+    </map>
+
+<script language="javascript">
+$(document).ready(function ()
+{
+	$('#tableStatus').mapster({
+        noHrefIsMask: false,
+        fillColor: '0a7a0a',
+        fillOpacity: 0.7,
+        mapKey: 'tables',
+        strokeWidth: 2,
+        stroke: true,
+        strokeColor: 'f88017',
+        render_select: {
+            fillColor: 'adadad'
+        }
+});
+});
+</script>
+
+</body>
+</html> 
