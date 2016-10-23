@@ -13,9 +13,15 @@
     <p>
       For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
     </p>
+    <div>
+      Name: <input type="string">
+    </div>
+    <div>
+      <button >Check In</button>
+    </div>
   </ion-content>
 </ion-view>
-<script>
+<script src="/node_modules/angular/angular.js">
   console.log("function registers");
 
   function ($scope, $stateParams, checkin){
@@ -27,7 +33,7 @@
     $scope.submit = function(){
       $scope.submitting = true;
       checkin.add($scope.data).then(function(){
-        
+
       })
     }
   }
