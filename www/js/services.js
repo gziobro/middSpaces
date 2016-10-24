@@ -15,7 +15,7 @@ angular.module('starter.services', [])
       })
 
       return deferred.promise;
-    }
+    },
     add: function(data){
       var deferred = $q.defer();
       currentID ++;
