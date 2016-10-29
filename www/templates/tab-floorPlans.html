@@ -1,13 +1,11 @@
-<!doctype html>
 <ion-view view-title="Floor Plans">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/floorPlans/{{chat.id}}">
         <img ng-src="{{chat.face}}">
         <h2>{{chat.name}}</h2>
-        <!--<p>{{chat.lastText}}</p>-->
+        <p>{{chat.lastText}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
-        <button ion-button>Default</button>
 
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           Delete

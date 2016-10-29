@@ -6,9 +6,10 @@
 -->
 <ion-view view-title="{{chat.name}}">
   <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
+    <img ng-src="{{chat.face}}" style="width: 325px; height: 550px">
+    <button ng-controller="PopupCtrl" class="button button-positive" ng-click="showConfirm()">
+      Test
+    </button>
+    <!--<p>Hello!</p>-->
   </ion-content>
 </ion-view>
