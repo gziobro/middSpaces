@@ -15,7 +15,7 @@ angular.module('starter.services', [])
       })
 
       return deferred.promise;
-    }
+    },
     add: function(data){
       var deferred = $q.defer();
       currentID ++;
@@ -24,12 +24,18 @@ angular.module('starter.services', [])
         deferred.resolve(resp.data);
       });
       return deferred.promise;
+    },
+    update: function(data){
+      var deferred = $q.defer();
+      $http.put(api_url + '/id/'+ data.id, data).then(function(resp){
+        deferred.resolve(resp.data);
+      });
+      return deferred.promise;
     }
   };
 
   return ret;
 }])
-
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array

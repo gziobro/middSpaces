@@ -13,18 +13,18 @@
     <p>
       For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
     </p>
-    <div>
-      Name: <input type="string">
-    </div>
-    <div>
-      <button >Check In</button>
+
+    <div ng-app="services.js">
+      Name: <input type="string" ng-model="string">
+      <button class="button" ng-click=addData()>Check In</button>
     </div>
   </ion-content>
 </ion-view>
 <script src="/node_modules/angular/angular.js">
   console.log("function registers");
 
-  function ($scope, $stateParams, checkin){
+  function addData($scope, $stateParams, checkin, $ionicPopup){
+    console.log("function registers")
     $scope.data = {
       space: ' ',
       open: true
@@ -33,6 +33,15 @@
     $scope.submit = function(){
       $scope.submitting = true;
       checkin.add($scope.data).then(function(){
+        $scope.data = {
+          space: 'east',
+          open: false
+        }
+        $scope.submitting = false;
+        $ionicPopup.alert({
+          title: "Thank you!",
+          template: "You are checked in"
+        });
 
       })
     }
