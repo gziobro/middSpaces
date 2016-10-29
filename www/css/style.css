@@ -1,1 +1,5 @@
 /* Empty. Add your own CSS if you like */
+.imagewrap {display:inline-block;position:relative;}
+.button1 {position:absolute;top:0;left:65%;background-color: #4CAF50;width: 8%;height: 3%}
+.button2 {position:absolute;bottom:0;right:0;}
+.button3 {position:absolute;right:50%;top:50%;}

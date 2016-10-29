@@ -25,4 +25,21 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
+})
+
+.controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+  // A confirm dialog
+  $scope.showConfirm = function() {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Check In',
+      template: 'Are you checking into this space?'
+    });
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('Yes');
+      } else {
+        console.log('No');
+      }
+    });
+  };
 });
