@@ -16,34 +16,10 @@
 
     <div ng-app="services.js">
       Name: <input type="string" ng-model="string">
-      <button class="button" ng-click=addData()>Check In</button>
+      <button class="button" ng-controller="addData" ng-click=submit()>Check In</button>
     </div>
   </ion-content>
 </ion-view>
 <script src="/node_modules/angular/angular.js">
   console.log("function registers");
-
-  function addData($scope, $stateParams, checkin, $ionicPopup){
-    console.log("function registers")
-    $scope.data = {
-      space: ' ',
-      open: true
-    }
-    $scope.submitting = false;
-    $scope.submit = function(){
-      $scope.submitting = true;
-      checkin.add($scope.data).then(function(){
-        $scope.data = {
-          space: 'east',
-          open: false
-        }
-        $scope.submitting = false;
-        $ionicPopup.alert({
-          title: "Thank you!",
-          template: "You are checked in"
-        });
-
-      })
-    }
-  }
 </script>

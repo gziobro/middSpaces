@@ -42,4 +42,28 @@ angular.module('starter.controllers', [])
       }
     });
   };
+})
+
+.controller('addData',function($scope, $stateParams, checkin, $ionicPopup){
+  console.log("function registers")
+  $scope.data = {
+    space: ' ',
+    open: true
+  }
+  $scope.submitting = false;
+  $scope.submit = function(){
+    $scope.submitting = true;
+    checkin.add($scope.data).then(function(){
+      $scope.data = {
+        space: 'east',
+        open: false
+      }
+      $scope.submitting = false;
+      $ionicPopup.alert({
+        title: "Thank you!",
+        template: "You are checked in"
+      });
+
+    })
+  }
 });
