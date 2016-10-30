@@ -8,12 +8,11 @@ angular.module('starter.services', [])
   var ret={
     all: function(){
       var deferred = $q.defer();
-
+      var buttonID= event.srcElement.id;
       $http.get(api_url).then(function(resp){
         if (resp.data.length > 0) currentID = parseInt(resp.data[resp.data.length-1].id);
         deferred.resolve(resp.data);
       })
-
       return deferred.promise;
     },
     add: function(data){
