@@ -26,8 +26,9 @@ angular.module('starter.services', [])
       return deferred.promise;
     },
     update: function(data){
+      console.log(data.id)
       var deferred = $q.defer();
-      $http.put(api_url + '/id/'+ data.id, data).then(function(resp){
+      $http.patch(api_url + '/id/1', data).then(function(resp){
         deferred.resolve(resp.data);
       });
       return deferred.promise;
