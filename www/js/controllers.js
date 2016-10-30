@@ -45,17 +45,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('addData',function($scope, $stateParams, checkin, $ionicPopup){
-//<<<<<<< HEAD
-//=======
-//  console.log("function registers!")
-//>>>>>>> 9ab5e79bea47ff344f8fe7fb14e46f9182c0d7e9
   $scope.data = {
     space: ' ',
     open: true
   }
   $scope.submitting = false;
   $scope.submit = function(event){
-    console.log(event.srcElement.id);
+    console.log(event);
     $scope.submitting = true;
     checkin.update($scope.data).then(function(){
       $scope.data = {

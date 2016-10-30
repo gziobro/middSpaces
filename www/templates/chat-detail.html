@@ -8,11 +8,11 @@
   <ion-content class="padding">
     <div class="imagewrap">
       <img ng-src="{{chat.face}}" style="width: 300px; height: 500px">
-      <!--<button ng-controller="PopupCtrl" class="north" ng-click="showConfirm()"></button>
-      <button ng-controller="PopupCtrl" class="west" ng-click="showConfirm()"></button>
-      <button ng-controller="PopupCtrl" class="south" ng-click="showConfirm()"></button>
-      <button ng-controller="PopupCtrl" class="east" ng-click="showConfirm()"></button>
-      <button ng-controller="PopupCtrl" class="center" ng-click="showConfirm()"></button>-->
+      <button id=4 ng-controller="addData" class="north" ng-click="submit($event)"></button>
+      <button id=3 ng-controller="addData" class="west" ng-click="submit($event)"></button>
+      <button id=2 ng-controller="addData" class="south" ng-click="submit($event)"></button>
+      <button id=1 ng-controller="addData" class="east" ng-click="submit($event)"></button>
+      <button id=5 ng-controller="addData" class="center" ng-click="submit($event)"></button>
    </div>
     <!--<p>Hello!</p>-->
   </ion-content>
