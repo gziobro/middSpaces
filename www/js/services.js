@@ -45,22 +45,24 @@ angular.module('starter.services', [])
   var chats = [{
     id: 0,
     name: 'Floor 2',
-    //face: 'img/F4Outline.png'
+    face: 'img/F2Outline.png'
   }, {
     id: 1,
     name: 'Floor 3',
     //lastText: 'Hey, it\'s me',
-    face: 'img/ionic.png'
+    face: 'img/F3Outline.png'
   }, {
     id: 2,
     name: 'Floor 4',
     face: 'img/F4Outline.png'
   }, {
     id: 3,
-    name: 'Floor 5'
+    name: 'Floor 5',
+    face: 'img/F5Outline.png'
   }, {
     id: 4,
-    name: 'Floor 6'
+    name: 'Floor 6',
+    face: 'img/F6Outline.png'
   }];
 
   return {
