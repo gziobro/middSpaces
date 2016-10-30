@@ -45,6 +45,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('addData',function($scope, $stateParams, checkin, $ionicPopup){
+//<<<<<<< HEAD
+//=======
+//  console.log("function registers!")
+//>>>>>>> 9ab5e79bea47ff344f8fe7fb14e46f9182c0d7e9
   $scope.data = {
     space: ' ',
     open: true
@@ -61,7 +65,7 @@ angular.module('starter.controllers', [])
       $scope.submitting = false;
       $ionicPopup.alert({
         title: "Thank you!",
-        template: "You are checked in"
+        template: "You are now checked in."
       });
 
     })
