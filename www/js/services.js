@@ -68,7 +68,7 @@ angular.module('starter.services', [])
     face: 'img/F6Outline.png'
   }, {
     id: 5,
-    name: 'Armstrong Library 1',
+    name: 'Armstrong Library Floor 1',
     lastText: '11'
   }, {
     id: 6,
