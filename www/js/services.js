@@ -43,25 +43,37 @@ angular.module('starter.services', [])
   // Some fake testing data
   var chats = [{
     id: 0,
-    name: 'Floor 2',
+    name: 'Bihall Floor 2',
+    lastText: '2',
     face: 'img/F2Outline.png'
   }, {
     id: 1,
-    name: 'Floor 3',
-    //lastText: 'Hey, it\'s me',
+    name: 'Bihall Floor 3',
+    lastText: '3',
     face: 'img/F3Outline.png'
   }, {
     id: 2,
-    name: 'Floor 4',
+    name: 'Bihall Floor 4',
+    lastText: '5',
     face: 'img/F4Outline.png'
   }, {
     id: 3,
-    name: 'Floor 5',
+    name: 'Bihall Floor 5',
+    lastText: '0',
     face: 'img/F5Outline.png'
   }, {
     id: 4,
-    name: 'Floor 6',
+    name: 'Bihall Floor 6',
+    lastText: '2',
     face: 'img/F6Outline.png'
+  }, {
+    id: 5,
+    name: 'Armstrong Library 1',
+    lastText: '11'
+  }, {
+    id: 6,
+    name: 'Armstrong Library Floor 2',
+    lastText: '4'
   }];
 
   return {
