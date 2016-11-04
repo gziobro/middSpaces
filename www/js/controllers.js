@@ -46,23 +46,27 @@ angular.module('starter.controllers', [])
 
 .controller('addData',function($scope, $stateParams, checkin, $ionicPopup){
   $scope.data = checkin.all();//{
-    console.log($scope.data);
+    //console.log($scope.data);
     //space: ' ',
   //  open: true
   //}
   $scope.submitting = false;
   $scope.submit = function(event){
-    console.log(event);
+    //console.log(event);
     $scope.submitting = true;
+    $scope.data = {
+      id: event.srcElement.id,
+      open: false
+    }
     checkin.update($scope.data).then(function(){
-      $scope.data = {
-        id: event.srcElement.id,
-        open: false
-      }
+      //$scope.data = {
+      //  id: event.srcElement.id,
+      //  open: false
+      //}
       $scope.submitting = false;
       console.log($scope.data.open);
       if ($scope.data.open == false){
-        event.srcElement.style.backgroundColor = "red";
+        event.srcElement.style.backgroundColor = "#e31a1c";
       };
 
       $ionicPopup.alert({
