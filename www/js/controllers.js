@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
       if ($scope.data.open == false){
         event.srcElement.style.backgroundColor = "#e31a1c";
       };
-
+      checkin.occupy($scope.data);
       $ionicPopup.alert({
         title: "Thank you!",
         template: "You are now checked in."

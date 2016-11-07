@@ -4,6 +4,7 @@ angular.module('starter.services', [])
   var api_url= 'https://sheetsu.com/apis/v1.0/73e7d27138f0';
 
   var currentID = 1;
+  var occupied;
 
   var ret={
     all: function(){
@@ -31,6 +32,19 @@ angular.module('starter.services', [])
         deferred.resolve(resp.data);
       });
       return deferred.promise;
+    },
+    occupy: function(data){
+      console.log(data);
+      var buttonID= data.id;
+      var deferred = $q.defer();
+      $http.get(api_url + '/id/'+buttonID).then(function(resp){
+        occupied = resp.data[0].space;
+        console.log(occupied);
+        return deferred.promise;
+      });
+    },
+    checkout: function(){
+      
     }
   };
 
