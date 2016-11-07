@@ -54,40 +54,39 @@ angular.module('starter.services', [])
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
   var chats = [{
     id: 0,
-    name: 'Bihall Floor 2',
-    lastText: '2',
-    face: 'img/F2Outline.png'
+    name: 'Armstrong Library Floor 1',
+    lastText: '2'
   }, {
     id: 1,
-    name: 'Bihall Floor 3',
-    lastText: '3',
-    face: 'img/F3Outline.png'
+    name: 'Armstrong Library Floor 2',
+    lastText: '3'
   }, {
     id: 2,
-    name: 'Bihall Floor 4',
+    name: 'Bihall Floor 2',
     lastText: '5',
-    face: 'img/F4Outline.png'
+    face: 'img/F2Outline.png'
   }, {
     id: 3,
-    name: 'Bihall Floor 5',
+    name: 'Bihall Floor 3',
     lastText: '0',
-    face: 'img/F5Outline.png'
+    face: 'img/F3Outline.png'
   }, {
     id: 4,
-    name: 'Bihall Floor 6',
+    name: 'Bihall Floor 4',
     lastText: '2',
-    face: 'img/F6Outline.png'
+    face: 'img/F4Outline.png'
   }, {
     id: 5,
-    name: 'Armstrong Library Floor 1',
-    lastText: '11'
+    name: 'Bihall Floor 5',
+    lastText: '11',
+    face: 'img/F5Outline.png'
   }, {
     id: 6,
-    name: 'Armstrong Library Floor 2',
-    lastText: '4'
+    name: 'Bihall Floor 6',
+    lastText: '4',
+    face: 'img/F6Outline.png'
   }];
 
   return {
