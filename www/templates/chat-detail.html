@@ -7,14 +7,47 @@
 <ion-view view-title="{{chat.name}}">
   <ion-content class="padding">
     <div class="imagewrap">
-      <img ng-src="{{chat.face}}" style="width: 300px; height: 500px">
-      <button id=4 ng-controller="addData" class="north" ng-click="submit($event)"></button>
-      <button id=3 ng-controller="addData" class="west" ng-click="submit($event)"></button>
-      <button id=2 ng-controller="addData" class="south" ng-click="submit($event)"></button>
-      <button id=1 ng-controller="addData" class="east" ng-click="submit($event)"></button>
-      <button id=5 ng-controller="addData" class="center" ng-click="submit($event)"></button>
+      <img ng-if="chat.name == 'Bihall Floor 2'" ng-src="img/F2Outline.png" style="width:350px;height:560px;">
+      <button ng-if="chat.name == 'Bihall Floor 2'" id=6 ng-controller="addData" class="north2" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 2'" id=7 ng-controller="addData" class="west2" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 2'" id=8 ng-controller="addData" class="south2" ng-click="submit($event)"></button>
+    </div>
+    <div class="imagewrap">
+      <img ng-if="chat.name == 'Bihall Floor 3'" ng-src="img/F3Outline.png" style="width:350px;height:550px">
+      <button ng-if="chat.name == 'Bihall Floor 3'" id=9 ng-controller="addData" class="north3" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 3'" id=10 ng-controller="addData" class="west3a" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 3'" id=11 ng-controller="addData" class="west3b" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 3'" id=12 ng-controller="addData" class="center3a" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 3'" id=13 ng-controller="addData" class="center3b" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 3'" id=14 ng-controller="addData" class="south3" ng-click="submit($event)"></button>
+    </div>
+    <div class="imagewrap">
+      <img ng-if="chat.name == 'Bihall Floor 4'" ng-src="img/F4Outline.png" style="width:300px;height:500px">
+        <button ng-if="chat.name == 'Bihall Floor 4'" id=4 ng-controller="addData" class="north" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 4'" id=3 ng-controller="addData" class="west" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 4'" id=2 ng-controller="addData" class="south" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 4'" id=1 ng-controller="addData" class="east" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 4'" id=5 ng-controller="addData" class="center" ng-click="submit($event)"></button>
+   </div>
+   <div class="imagewrap">
+      <img ng-if="chat.name == 'Bihall Floor 5'" ng-src="img/F5Outline.png" style="width:355px;height:520px">
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=15 ng-controller="addData" class="north5" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=16 ng-controller="addData" class="west5a" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=17 ng-controller="addData" class="west5b" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=18 ng-controller="addData" class="center5a" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=19 ng-controller="addData" class="center5b" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=20 ng-controller="addData" class="south5" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=21 ng-controller="addData" class="east5a" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 5'" id=22 ng-controller="addData" class="east5b" ng-click="submit($event)"></button>
+   </div>
+   <div class="imagewrap">
+      <img ng-if="chat.name == 'Bihall Floor 6'" ng-src="img/F6Outline.png" style="width:355px;height:515px">
+      <button ng-if="chat.name == 'Bihall Floor 6'" id=23 ng-controller="addData" class="west6a" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 6'" id=24 ng-controller="addData" class="west6b" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 6'" id=25 ng-controller="addData" class="west6c" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 6'" id=26 ng-controller="addData" class="east6" ng-click="submit($event)"></button>
+      <button ng-if="chat.name == 'Bihall Floor 6'" id=27 ng-controller="addData" class="center6" ng-click="submit($event)"></button>
    </div>
     <!--<p>Hello!</p>-->
   </ion-content>
 </ion-view>
-<!--change this file to ion lists-->
