@@ -43,8 +43,18 @@ angular.module('starter.services', [])
         return deferred.promise;
       });
     },
-    checkout: function(){
-      
+    out: function(data){
+      var deferred = $q.defer();
+      console.log(occupied + " occupied");
+      data.space = occupied;
+      console.log(data.space);
+      $http.patch(api_url +'/space/' + occupied, data).then(function(resp){
+        occupied = "";
+        console.log(occupied);
+        deferred.resolve(resp.data);
+      });
+      console.log(occupied);
+      return deferred.promise;
     }
   };
 

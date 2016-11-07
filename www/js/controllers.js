@@ -76,4 +76,16 @@ angular.module('starter.controllers', [])
 
     })
   }
+})
+.controller('checkout', function($scope, $stateParams, checkin, $ionicPopup){
+  $scope.data = checkin.all();
+  $scope.submitting = false;
+  $scope.checkingout = function(event){
+    $scope.data = {
+      space: "",
+      open: true
+    };
+    checkin.out($scope.data);
+  }
+  console.log("checked out");
 });
