@@ -60,16 +60,17 @@ angular.module('starter.services', [])
       var deferred = $q.defer();
       // console.log(data.$$state.value);
       var d = data.$$state.value;
-      console.log(d);     // prints out list of 27 spaces
+      //console.log(d);     // prints out list of 27 spaces
       for (i=0; i<d.length; i++){
-        //console.log(document);
-        console.log(angular.element(document.body));
-        if (d[i].open == "true"){     // green
+        console.log(document.getElementById(d[i].id));
+        //console.log(angular.element(document.body));
+        console.log(d[i].open);
+        if (d[i].open == "TRUE"){     // green
           document.getElementById(d[i].id).style.backgroundColor = "#4CAF50";
           console.log(document.getElementById(i));
           console.log("hello");
         }
-        else if (d[i].open == "false"){
+        else if (d[i].open == "FALSE"){
           document.getElementById(d[i].id).style.backgroundColor = "#E31A1C";
           console.log(document.getElementById(i));
           console.log("goodbye");
