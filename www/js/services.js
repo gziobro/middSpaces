@@ -55,6 +55,26 @@ angular.module('starter.services', [])
       });
       console.log(occupied);
       return deferred.promise;
+    },
+    Refresh: function(data){
+      var deferred = $q.defer();
+      console.log(data.$$state.value);
+      var d = data.$$state.value;
+      console.log(d);
+      for (i=0; i<d.length; i++){
+        console.log(document);
+        console.log(angular.element(document.body));
+        if (d[i].open == "TRUE"){
+          document.getElementById(i).style.backgroundColor = "#4CAF50";
+          console.log(document.getElementById(i));
+        }
+        if (d[i].open == "FALSE"){
+          document.getElementById(i).style.backgroundColor = "#e31a1c";
+          console.log(document.getElementById(i));
+        }
+      }
+      console.log("end loop");
+      return deferred.promise;
     }
   };
 

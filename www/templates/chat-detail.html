@@ -48,6 +48,9 @@
       <button ng-if="chat.name == 'Bihall Floor 6'" id=26 ng-controller="addData" class="east6" ng-click="submit($event)"></button>
       <button ng-if="chat.name == 'Bihall Floor 6'" id=27 ng-controller="addData" class="center6" ng-click="submit($event)"></button>
    </div>
+   <div>
+     <button ng-controller="refresh" class="refresh" ng-click="refreshing($event)">Refresh</button>
+   </div>
     <!--<p>Hello!</p>-->
   </ion-content>
 </ion-view>

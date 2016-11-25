@@ -88,4 +88,12 @@ angular.module('starter.controllers', [])
     checkin.out($scope.data);
   }
   console.log("checked out");
-});
+})
+.controller('refresh', function($scope, $stateParams, checkin, $ionicPopup){
+  $scope.data = checkin.all();
+  $scope.submitting = false;
+  $scope.refreshing = function(event){
+    checkin.Refresh($scope.data);
+  }
+})
+;
