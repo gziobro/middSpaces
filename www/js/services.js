@@ -58,19 +58,21 @@ angular.module('starter.services', [])
     },
     Refresh: function(data){
       var deferred = $q.defer();
-      console.log(data.$$state.value);
+      // console.log(data.$$state.value);
       var d = data.$$state.value;
-      console.log(d);
+      console.log(d);     // prints out list of 27 spaces
       for (i=0; i<d.length; i++){
-        console.log(document);
+        //console.log(document);
         console.log(angular.element(document.body));
-        if (d[i].open == "TRUE"){
-          document.getElementById(i).style.backgroundColor = "#4CAF50";
+        if (d[i].open == "true"){     // green
+          document.getElementById(d[i].id).style.backgroundColor = "#4CAF50";
           console.log(document.getElementById(i));
+          console.log("hello");
         }
-        if (d[i].open == "FALSE"){
-          document.getElementById(i).style.backgroundColor = "#e31a1c";
+        else if (d[i].open == "false"){
+          document.getElementById(d[i].id).style.backgroundColor = "#E31A1C";
           console.log(document.getElementById(i));
+          console.log("goodbye");
         }
       }
       console.log("end loop");
