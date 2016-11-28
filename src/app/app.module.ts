@@ -1,4 +1,4 @@
-import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { CloudSettings } from '@ionic/cloud-angular';
 
 const cloudSettings: CloudSettings = {
   'core': {
