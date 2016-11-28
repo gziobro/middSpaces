@@ -4,7 +4,7 @@ angular.module('starter.services', [])
   var api_url= 'https://sheetsu.com/apis/v1.0/73e7d27138f0';
 
   var currentID = 1;
-  var occupied;
+  var occupied; //stores the
 
   var ret={
     all: function(){
@@ -62,12 +62,17 @@ angular.module('starter.services', [])
       for (i=0; i<d.length; i++){
         console.log(document.getElementById(d[i].id));
         console.log(d[i].open);
-        if (d[i].open == "TRUE"){     // green
+        if (occupied != ""){
+          document.getElementById(d[i].id).disabled = true;
+        }
+        else if (d[i].open == "TRUE"){     // green
           document.getElementById(d[i].id).style.backgroundColor = "#4CAF50";
+          document.getElementById(d[i].id).disabled = false;
           console.log("hello");
         }
         else if (d[i].open == "FALSE"){   // red
           document.getElementById(d[i].id).style.backgroundColor = "#E31A1C";
+          document.getElementById(d[i].id).disabled = true;
           console.log("goodbye");
         }
       }
