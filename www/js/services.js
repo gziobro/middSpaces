@@ -39,13 +39,12 @@ angular.module('starter.services', [])
       var deferred = $q.defer();
       $http.get(api_url + '/id/'+buttonID).then(function(resp){
         occupied = resp.data[0].space;
-        console.log(occupied);
+        console.log(occupied + " occupied");
         return deferred.promise;
       });
     },
     out: function(data){
       var deferred = $q.defer();
-      console.log(occupied + " occupied");
       data.space = occupied;
       console.log(data.space);
       $http.patch(api_url +'/space/' + occupied, data).then(function(resp){
@@ -60,19 +59,15 @@ angular.module('starter.services', [])
       var deferred = $q.defer();
       // console.log(data.$$state.value);
       var d = data.$$state.value;
-      //console.log(d);     // prints out list of 27 spaces
       for (i=0; i<d.length; i++){
         console.log(document.getElementById(d[i].id));
-        //console.log(angular.element(document.body));
         console.log(d[i].open);
         if (d[i].open == "TRUE"){     // green
           document.getElementById(d[i].id).style.backgroundColor = "#4CAF50";
-          console.log(document.getElementById(i));
           console.log("hello");
         }
-        else if (d[i].open == "FALSE"){
+        else if (d[i].open == "FALSE"){   // red
           document.getElementById(d[i].id).style.backgroundColor = "#E31A1C";
-          console.log(document.getElementById(i));
           console.log("goodbye");
         }
       }
