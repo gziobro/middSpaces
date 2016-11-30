@@ -6,7 +6,8 @@ angular.module('starter.services', [])
   var currentID = 1;
   var occupied = ""; //stores the occupied space name
   var floorID;
-
+  var floorArray = [[6,7,8],[9,10,11,12,13,14],[1,2,3,4,5],[15,16,17,18,19,20,21,22],[23,24,25,26,27]];
+  var spaceArray;
 
   var ret={
     get: function(chatId) {
@@ -67,14 +68,32 @@ angular.module('starter.services', [])
       return deferred.promise;
     },
     Refresh: function(data){
+      console.log(floorID);
       var deferred = $q.defer();
       var IDarray = [];
       //console.log(data.$$state.value);
       var d = data.$$state.value;
 
-
-
-      for (i=0; i<d.length; i++){
+      if (floorID.id==2){
+        spaceArray=floorArray[0];
+      };
+      if (floorID.id==3){
+        spaceArray=floorArray[1];
+      };
+      if (floorID.id==4){
+        spaceArray=floorArray[2];
+      };
+      if (floorID.id==5){
+        spaceArray=floorArray[3];
+      };
+      if (floorID.id==6){
+        spaceArray=floorArray[4];
+      };
+      console.log(spaceArray);
+      console.log(spaceArray[0]);
+      console.log(spaceArray.length);
+      for (i=spaceArray[0]; i<(spaceArray.length+spaceArray[0]); i++){
+        console.log("running loop");
         //console.log(document.getElementById(d[i].id));
         //console.log(d[i].open);
         if (occupied != ""){    // if checked in, lock all buttons
