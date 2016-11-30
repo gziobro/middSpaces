@@ -4,9 +4,19 @@ angular.module('starter.services', [])
   var api_url= 'https://sheetsu.com/apis/v1.0/73e7d27138f0';
 
   var currentID = 1;
-  var occupied; //stores the
+  var occupied = ""; //stores the occupied space name
+  var floorID;
+
 
   var ret={
+    get: function(chatId) {
+      for (var i = 0; i < chats.length; i++) {
+        if (chats[i].id === parseInt(chatId)) {
+          return chats[i];
+        }
+      }
+      return null;
+    },
     all: function(){
       var deferred = $q.defer();
       var buttonID= event.srcElement.id;
@@ -40,8 +50,9 @@ angular.module('starter.services', [])
       $http.get(api_url + '/id/'+buttonID).then(function(resp){
         occupied = resp.data[0].space;
         console.log(occupied + " occupied");
-        return deferred.promise;
+        deferred.resolve(resp.data);
       });
+      return deferred.promise;
     },
     out: function(data){
       var deferred = $q.defer();
@@ -53,32 +64,45 @@ angular.module('starter.services', [])
         console.log(resp.data);
       });
       document.getElementById("1").style.backgroundColor = "#E31A1C";
+      return deferred.promise;
     },
     Refresh: function(data){
       var deferred = $q.defer();
-      console.log(data.$$state.value);
+      var IDarray = [];
+      //console.log(data.$$state.value);
       var d = data.$$state.value;
+
+
+
       for (i=0; i<d.length; i++){
-        console.log(document.getElementById(d[i].id));
-        console.log(d[i].open);
-        if (occupied != ""){    // purpose?
-          document.getElementById(d[i]).disabled = true;     // is disabled a property? where is it used?
+        //console.log(document.getElementById(d[i].id));
+        //console.log(d[i].open);
+        if (occupied != ""){    // if checked in, lock all buttons
+          //console.log(document.getElementById(d[i].id));
+          document.getElementById(d[i].id).disabled = true;     // is disabled a property? where is it used?
         }
-        else if (d[i].open == "TRUE" && d[i] != "null"){     // green
-          document.getElementById(d[i]).style.backgroundColor = "#4CAF50";
+        if (d[i].open == "TRUE" && d[i] != "null"){     // green
+          document.getElementById(d[i].id).style.backgroundColor = "#4CAF50";
           document.getElementById(d[i].id).disabled = false;
-          console.log("hello");
+          //console.log("hello");
         }
         else if (d[i].open == "FALSE"){   // red
-          document.getElementById(d[i]).style.backgroundColor = "#E31A1C";
+
+          document.getElementById(d[i].id).style.backgroundColor = "#E31A1C";
           document.getElementById(d[i].id).disabled = true;
-          console.log("goodbye");
+          //console.log("goodbye");
         }
       }
-      console.log("end loop");
+      //console.log("end loop");
       return deferred.promise;
+    },
+    setFloor: function(data){
+      console.log(data);
+      floorID = data;
+      console.log(floorID);
     }
   };
+
 
   return ret;
 }])

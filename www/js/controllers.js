@@ -17,8 +17,9 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats, checkin) {
   $scope.chat = Chats.get($stateParams.chatId);
+  checkin.setFloor($scope.chat);
 })
 
 .controller('AccountCtrl', function($scope) {
@@ -70,12 +71,13 @@ angular.module('starter.controllers', [])
       };
       checkin.occupy($scope.data);
       $ionicPopup.alert({
-        title: "You are now checked in."
-        //template: "You are now checked in."
+        title: "Thank you!",
+        template: "You are now checked in."
       });
 
     })
   }
+  $scope.disable = function(event){}
 })
 .controller('checkout', function($scope, $stateParams, checkin, $ionicPopup){
   $scope.data = checkin.all();
@@ -87,7 +89,7 @@ angular.module('starter.controllers', [])
     };
     checkin.out($scope.data);
     $ionicPopup.alert({
-      title: "You are now checked out."
+      title: "You Are Now Checked Out"
     })
   }
 
