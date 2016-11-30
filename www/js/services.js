@@ -46,32 +46,31 @@ angular.module('starter.services', [])
     out: function(data){
       var deferred = $q.defer();
       data.space = occupied;
-      console.log(data.space);
+      console.log(data.space + " has been checked out");
       $http.patch(api_url +'/space/' + occupied, data).then(function(resp){
         occupied = "";
-        console.log(occupied);
         deferred.resolve(resp.data);
+        console.log(resp.data);
       });
-      console.log(occupied);
-      return deferred.promise;
+      document.getElementById("1").style.backgroundColor = "#E31A1C";
     },
     Refresh: function(data){
       var deferred = $q.defer();
-      // console.log(data.$$state.value);
+      console.log(data.$$state.value);
       var d = data.$$state.value;
       for (i=0; i<d.length; i++){
         console.log(document.getElementById(d[i].id));
         console.log(d[i].open);
-        if (occupied != ""){
-          document.getElementById(d[i].id).disabled = true;
+        if (occupied != ""){    // purpose?
+          document.getElementById(d[i]).disabled = true;     // is disabled a property? where is it used?
         }
-        else if (d[i].open == "TRUE"){     // green
-          document.getElementById(d[i].id).style.backgroundColor = "#4CAF50";
+        else if (d[i].open == "TRUE" && d[i] != "null"){     // green
+          document.getElementById(d[i]).style.backgroundColor = "#4CAF50";
           document.getElementById(d[i].id).disabled = false;
           console.log("hello");
         }
         else if (d[i].open == "FALSE"){   // red
-          document.getElementById(d[i].id).style.backgroundColor = "#E31A1C";
+          document.getElementById(d[i]).style.backgroundColor = "#E31A1C";
           document.getElementById(d[i].id).disabled = true;
           console.log("goodbye");
         }

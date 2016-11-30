@@ -70,8 +70,8 @@ angular.module('starter.controllers', [])
       };
       checkin.occupy($scope.data);
       $ionicPopup.alert({
-        title: "Thank you!",
-        template: "You are now checked in."
+        title: "You are now checked in."
+        //template: "You are now checked in."
       });
 
     })
@@ -87,7 +87,7 @@ angular.module('starter.controllers', [])
     };
     checkin.out($scope.data);
     $ionicPopup.alert({
-      title: "You Are Now Checked Out"
+      title: "You are now checked out."
     })
   }
 
