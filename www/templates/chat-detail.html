@@ -2,12 +2,21 @@
   <ion-nav-buttons side="right">
     <button class="button" ng-controller="refresh" ng-click="refreshing($event)" class="button-assertive">Refresh</button>
   </ion-nav-buttons>
-  <ion-content class="padding">
+  <ion-content class="padding" ng-controller="zoom">
     <div class="imagewrap">
-      <img ng-if="chat.name == 'Bihall Floor 2'" ng-src="img/F2Outline.png" style="width:350px;height:560px;">
-      <button ng-if="chat.name == 'Bihall Floor 2'" id=6 ng-controller="addData" class="north2" ng-click="submit($event)"></button>
-      <button ng-if="chat.name == 'Bihall Floor 2'" id=7 ng-controller="addData" class="west2" ng-click="submit($event)"></button>
-      <button ng-if="chat.name == 'Bihall Floor 2'" id=8 ng-controller="addData" class="south2" ng-click="submit($event)"></button>
+      <ion-scroll id="mapImage"
+                  zooming="true"
+                  direction="xy"
+                  delegate-handle="zoom-pane"
+                  class="zoom-pane"
+                  min-zoom="1"
+                  max-zoom="15"
+                  overflow-scroll="false">
+      <img ng-if="chat.name == 'Bihall Floor 2'" ng-src="img/F2Outline.png" style="width:350px;height:560px;"/>
+        <button ng-if="chat.name == 'Bihall Floor 2'" id=6 ng-controller="addData" class="north2" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 2'" id=7 ng-controller="addData" class="west2" ng-click="submit($event)"></button>
+        <button ng-if="chat.name == 'Bihall Floor 2'" id=8 ng-controller="addData" class="south2" ng-click="submit($event)"></button>
+      </ion-scroll>
     </div>
     <div class="imagewrap">
       <img ng-if="chat.name == 'Bihall Floor 3'" ng-src="img/F3Outline.png" style="width:350px;height:550px">
@@ -45,8 +54,8 @@
       <button ng-if="chat.name == 'Bihall Floor 6'" id=26 ng-controller="addData" class="east6" ng-click="submit($event)"></button>
       <button ng-if="chat.name == 'Bihall Floor 6'" id=27 ng-controller="addData" class="center6" ng-click="submit($event)"></button>
    </div>
-   <!--<div>
-     <button ng-controller="refresh" class="refresh" ng-click="refreshing($event)">Refresh</button>
-   </div>-->
   </ion-content>
+  </body>
+  </html>
+
 </ion-view>

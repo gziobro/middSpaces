@@ -79,6 +79,7 @@ angular.module('starter.controllers', [])
   }
   $scope.disable = function(event){}
 })
+
 .controller('checkout', function($scope, $stateParams, checkin, $ionicPopup){
   //$scope.data = checkin.all();
   $scope.submitting = false;
@@ -96,6 +97,7 @@ angular.module('starter.controllers', [])
 
   console.log("checked out");
 })
+
 .controller('refresh', function($scope, $stateParams, checkin, $ionicPopup){
   $scope.data = checkin.all();
   checkin.Refresh($scope.data);
@@ -103,6 +105,18 @@ angular.module('starter.controllers', [])
   $scope.refreshing = function(event){
     console.log($scope.data);
     checkin.Refresh($scope.data);
+  }
+})
+
+.controller('zoom', function($scope, $ionicModal) {
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.openModal = function() {
+    $scope.modal.show()
   }
 })
 ;
