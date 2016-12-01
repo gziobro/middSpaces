@@ -46,7 +46,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('addData',function($scope, $stateParams, checkin, $ionicPopup){
-  $scope.data = checkin.all();//{
+  //$scope.data = checkin.all();
+  //{
     //console.log($scope.data);
     //space: ' ',
   //  open: true
@@ -79,13 +80,14 @@ angular.module('starter.controllers', [])
   $scope.disable = function(event){}
 })
 .controller('checkout', function($scope, $stateParams, checkin, $ionicPopup){
-  $scope.data = checkin.all();
+  //$scope.data = checkin.all();
   $scope.submitting = false;
   $scope.checkingout = function(event){
     $scope.data = {
       space: "",
       open: true
     };
+    console.log($scope.data);
     checkin.out($scope.data);
     $ionicPopup.alert({
       title: "You checked out!"
@@ -96,6 +98,7 @@ angular.module('starter.controllers', [])
 })
 .controller('refresh', function($scope, $stateParams, checkin, $ionicPopup){
   $scope.data = checkin.all();
+  checkin.Refresh($scope.data);
   $scope.submitting = false;
   $scope.refreshing = function(event){
     console.log($scope.data);

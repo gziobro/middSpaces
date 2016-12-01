@@ -22,6 +22,7 @@ angular.module('starter.services', [])
     all: function(){
       var deferred = $q.defer();
       var buttonID= event.srcElement.id;
+      console.log("Requesting data");
       $http.get(api_url).then(function(resp){
         everything=resp.data;
         //console.log(everything);
@@ -85,7 +86,7 @@ angular.module('starter.services', [])
       var deferred = $q.defer();
       var IDarray = [];
       var d = data.$$state.value;
-
+      console.log("Requesting data");
       $http.get(api_url).then(function(resp){
         everything=resp.data;
         console.log(resp.data);
