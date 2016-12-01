@@ -74,7 +74,6 @@ angular.module('starter.controllers', [])
         title: "Thank you!",
         template: "You are now checked in."
       });
-
     })
   }
   $scope.disable = function(event){}
@@ -89,7 +88,7 @@ angular.module('starter.controllers', [])
     };
     checkin.out($scope.data);
     $ionicPopup.alert({
-      title: "You Are Now Checked Out"
+      title: "You checked out!"
     })
   }
 
@@ -99,8 +98,8 @@ angular.module('starter.controllers', [])
   $scope.data = checkin.all();
   $scope.submitting = false;
   $scope.refreshing = function(event){
-    var data = $scope.data;
-    checkin.Refresh(data);
+    console.log($scope.data);
+    checkin.Refresh($scope.data);
   }
 })
 ;
