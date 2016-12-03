@@ -6,7 +6,7 @@ angular.module('starter.services', [])
   var currentID = 1;
   var occupied = ""; //stores the occupied space name
   var floorID;
-  var floorArray = [[6,7,8],[9,10,11,12,13,14],[1,2,3,4,5],[15,16,17,18,19,20,21,22],[23,24,25,26,27]];
+  var floorArray = [[6,7,8,35],[9,10,11,12,13,14],[28,29,30,31,32,33,34],[15,16,17,18,19,20,21,22],[23,24,25,26,27]];
   var spaceArray;
   var everything;
 
@@ -138,40 +138,35 @@ angular.module('starter.services', [])
 }])
 
 .factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
 
   var chats = [{
     id: 0,
-    name: 'Armstrong Library Floor 1',
-    lastText: '2'
+    name: 'Armstrong Floor 1',
+    //lastText: '2',
+    face: 'img/AL1Outline.png'
   }, {
     id: 1,
-    name: 'Armstrong Library Floor 2',
-    lastText: '3'
+    name: 'Armstrong Floor 2',
+    face: 'img/AL2Outline.png'
   }, {
     id: 2,
     name: 'Bihall Floor 2',
-    lastText: '5',
     face: 'img/F2Outline.png'
   }, {
     id: 3,
     name: 'Bihall Floor 3',
-    lastText: '0',
     face: 'img/F3Outline.png'
   }, {
     id: 4,
     name: 'Bihall Floor 4',
-    lastText: '2',
     face: 'img/F4Outline.png'
   }, {
     id: 5,
     name: 'Bihall Floor 5',
-    lastText: '11',
     face: 'img/F5Outline.png'
   }, {
     id: 6,
     name: 'Bihall Floor 6',
-    lastText: '4',
     face: 'img/F6Outline.png'
   }];
 
