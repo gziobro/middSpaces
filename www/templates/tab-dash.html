@@ -1,17 +1,17 @@
 <ion-view view-title="Status">
   <ion-content class="padding">
-    <h1>MiddSpaces</h1>
-    <h3>Current Status: Checked in</h3>
-    <h3>Floor #4 West Wing</h3>
-    <!--<h3>Time: 1 hour 3 minutes</h3>-->
-
+    <div ng-controller= "dash">
+      <h1>MiddSpaces</h1>
+      <h3>Current Status: {{status}}</h3>
+      <!--<h3>Time: 1 hour 3 minutes</h3>-->
+    </div>
     <style>
       h1{text-align:center;font-weight:bold}
       h3{text-align:center}
       .checkOutButton{position:relative;left:35%;bottom:5%;background-color: #007aff}
     </style>
     <div ng-app="services.js">
-      <button class="checkOutButton" ng-controller="checkout" ng-click=checkingout($event)>Check Out</button>
+      <button class="checkOutButton" ng-controller="checkout" ng-click=checkingout($event) id=100 disabled=true>Check Out</button>
     </div>
   </ion-content>
 </ion-view>

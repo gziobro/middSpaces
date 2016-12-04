@@ -6,9 +6,11 @@ angular.module('starter.services', [])
   var currentID = 1;
   var occupied = ""; //stores the occupied space name
   var floorID;
-  var floorArray = [[55,56,57,58,59,60,61,62,63,64,65,66,67,68,69],[36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],[6,7,8,35],[9,10,11,12,13,14],[28,29,30,31,32,33,34],[15,16,17,18,19,20,21,22],[23,24,25,26,27]];
+  var floorArray = [[55,56,57,58,59,60,61,62,63,64,65,66,67,68,69],[36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54],
+                    [6,7,8,35],[9,10,11,12,13,14],[28,29,30,31,32,33,34],[15,16,17,18,19,20,21,22],[23,24,25,26,27]];
   var spaceArray;
   var everything;
+  var checkinCount=0;
 
   var ret={
     get: function(chatId) {
@@ -51,6 +53,9 @@ angular.module('starter.services', [])
       for (i=spaceArray[0]-1; i<(spaceArray.length+spaceArray[0]-1); i++){
         document.getElementById(everything[i].id).disabled = true;
       }
+      checkinCount++;
+      document.getElementById(100).disabled=false;
+      console.log(document.getElementById(100));
       return deferred.promise;
     },
     occupy: function(data){
@@ -75,6 +80,8 @@ angular.module('starter.services', [])
       });
       //console.log();
       //document.getElementById("1").style.backgroundColor = "#E31A1C";
+      document.getElementById(100).disabled=true;
+      console.log(document.getElementById(100));
       return deferred.promise;
     },
     Refresh: function(data){
@@ -111,7 +118,7 @@ angular.module('starter.services', [])
         if (floorID.id==6){
           spaceArray=floorArray[6];
         };
-
+        console.log(spaceArray);
         for (i=spaceArray[0]-1; i<(spaceArray.length+spaceArray[0]-1); i++){
           //console.log(document.getElementById(d[i].id));
           //console.log(i);
@@ -136,6 +143,19 @@ angular.module('starter.services', [])
       console.log(data);
       floorID = data;
       console.log(floorID);
+    },
+    setStatus: function(){ //Checks to see if a space is occupied, then sets the response to display on status page
+      var status;
+      if (occupied != ""){
+        status="checked in";
+      }else{
+        status = "Not checked in"
+      };
+      console.log(status);
+      return status;
+    },
+    keepCount: function(){
+      return checkinCount;
     }
   };
 

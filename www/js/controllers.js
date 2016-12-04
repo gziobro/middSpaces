@@ -98,14 +98,43 @@ angular.module('starter.controllers', [])
   console.log("checked out");
 })
 
-.controller('refresh', function($scope, $stateParams, checkin, $ionicPopup){
+.controller('refresh', function($scope, $stateParams, checkin, $ionicPopup, $ionicLoading){
+  // $scope.show=function(){ //initiates spinner
+  //   $ionicLoading.show({
+  //     template: '<ion-spinner></ion-spinner>'
+  //   });
+  // };
+  // $scope.show(); //calls spinner function
   $scope.data = checkin.all();
   checkin.Refresh($scope.data);
   $scope.submitting = false;
-  $scope.refreshing = function(event){
+  // $scope.hide=function(){ //function to hide spinner
+  //   $ionicLoading.hide();
+  // };
+  // $scope.hide(); // hides spinner
+  $scope.refreshing = function(event){ // Refresh function called on-click of refresh button
+    // $scope.show=function(){
+    //   $ionicLoading.show({
+    //     template: '<ion-spinner></ion-spinner>'
+    //   });
+    // };
+    // $scope.show($ionicLoading);
     console.log($scope.data);
     checkin.Refresh($scope.data);
+    // $scope.hide=function(){ //function to hide spinner
+    //   $ionicLoading.hide();
+    // };
+    // $scope.hide($ionicLoading);
   }
+})
+.controller('dash', function($scope, $stateParams, checkin){ //used to input checked in status on tab-dash page
+  $scope.submitting=false;
+  $scope.status=checkin.setStatus();
+  console.log($scope.status);
+  return $scope.status;
+  $scope.getStatus=function(){
+    return checkin.setStatus();
+  };
 })
 
 .controller('zoom', function($scope, $ionicModal) {
@@ -118,5 +147,10 @@ angular.module('starter.controllers', [])
   $scope.openModal = function() {
     $scope.modal.show()
   }
+})
+.controller('count', function($scope, $stateParams, checkin){
+  $scope.Number=checkin.keepCount();
+  console.log($scope.Number);
+  return $scope.Number;
 })
 ;
