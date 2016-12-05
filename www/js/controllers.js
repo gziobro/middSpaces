@@ -148,6 +148,7 @@ angular.module('starter.controllers', [])
     $scope.modal.show()
   }
 })
+  
 .controller('count', function($scope, $stateParams, checkin){
   $scope.Number=checkin.keepCount();
   console.log($scope.Number);
