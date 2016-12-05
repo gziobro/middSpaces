@@ -127,11 +127,11 @@ angular.module('starter.services', [])
           //console.log(i);
           //console.log(occupied);
           if (everything[i].open == "TRUE" && everything[i] != "null"){     // green
-            document.getElementById(everything[i].id).style.backgroundColor = "#4CAF50";
+            document.getElementById(everything[i].id).style.backgroundColor = "#41ae76";
             document.getElementById(everything[i].id).disabled = false;
           }
           else if (everything[i].open == "FALSE"){   // red
-            document.getElementById(everything[i].id).style.backgroundColor = "#E31A1C";
+            document.getElementById(everything[i].id).style.backgroundColor = "#ef3b2c";
             document.getElementById(everything[i].id).disabled = true;
           };
           console.log(document.getElementById(everything[i].id));

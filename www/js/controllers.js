@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
       $scope.submitting = false;
       console.log($scope.data.open);
       if ($scope.data.open == false){
-        event.srcElement.style.backgroundColor = "#E31a1C";
+        event.srcElement.style.backgroundColor = "#ef3b2c";
       };
       checkin.occupy($scope.data);
       $ionicPopup.alert({
@@ -148,7 +148,7 @@ angular.module('starter.controllers', [])
     $scope.modal.show()
   }
 })
-  
+
 .controller('count', function($scope, $stateParams, checkin){
   $scope.Number=checkin.keepCount();
   console.log($scope.Number);

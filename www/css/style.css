@@ -77,7 +77,7 @@
 .center6 {position:absolute;top:60%;left:47%;width:1%;height:4%;background-color:#4CAF50;border-radius:4px}
 
 .refreshButton {border-radius:8px;background-color:#0B0947;color:white}
-.checkOutButton{text-align:center;margin:auto;padding:15px 140px;border-radius:8px;background-color:#0B0947;color:white}
+.checkOutButton{text-align:center;margin:auto;padding:15px 127px;border-radius:8px;background-color:#0B0947;color:white;font-size: 20px}
 
 .zoom-pane {
   width: 100% !important;
