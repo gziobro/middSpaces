@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
       $scope.submitting = false;
       console.log($scope.data.open);
       if ($scope.data.open == false){
-        event.srcElement.style.backgroundColor = "#ef3b2c";
+        event.srcElement.style.backgroundColor = "#0B0947";
       };
       checkin.occupy($scope.data);
       $ionicPopup.alert({

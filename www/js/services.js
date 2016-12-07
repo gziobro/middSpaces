@@ -45,7 +45,7 @@ angular.module('starter.services', [])
       });
       return deferred.promise;
     },
-    update: function(data){
+    update: function(data){ //checkin to a space
       var buttonID= event.srcElement.id;
       var deferred = $q.defer();
       $http.patch(api_url + '/id/' + buttonID, data).then(function(resp){
@@ -53,15 +53,15 @@ angular.module('starter.services', [])
         everything=resp.data;
       });
       console.log(spaceArray);
-      for (i=spaceArray[0]-1; i<(spaceArray.length+spaceArray[0]-1); i++){
+      for (i=spaceArray[0]-1; i<(spaceArray.length+spaceArray[0]-1); i++){ //Disables the rest of the buttons on the page
         document.getElementById(everything[i].id).disabled = true;
       }
       checkinCount++;
-      document.getElementById(100).disabled=false;
       console.log(document.getElementById(100));
+      document.getElementById(100).disabled=false;
       return deferred.promise;
     },
-    occupy: function(data){
+    occupy: function(data){ //updates occupied variable to reflect space that is checked into
       console.log(data);
       var buttonID= data.id;
       var deferred = $q.defer();
@@ -126,6 +126,10 @@ angular.module('starter.services', [])
           //console.log(document.getElementById(d[i].id));
           //console.log(i);
           //console.log(occupied);
+          var turnThisSpaceBlue;
+          if (everything[i].space==occupied){
+            turnThisSpaceBlue=i;
+          };
           if (everything[i].open == "TRUE" && everything[i] != "null"){     // green
             document.getElementById(everything[i].id).style.backgroundColor = "#41ae76";
             document.getElementById(everything[i].id).disabled = false;
@@ -135,6 +139,13 @@ angular.module('starter.services', [])
             document.getElementById(everything[i].id).disabled = true;
           };
           console.log(document.getElementById(everything[i].id));
+        };
+        //change checkedin space to blue
+        if (everything[turnThisSpaceBlue].space==occupied){
+          console.log("refreshing checked in button");
+          console.log(everything);
+          console.log(document.getElementById(everything[turnThisSpaceBlue].id));
+          document.getElementById(everything[turnThisSpaceBlue].id).style.backgroundColor = "#0B0947";
         };
       });
 
