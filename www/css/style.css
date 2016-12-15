@@ -92,6 +92,10 @@
   justify-content:center;
 }
 
+.background{
+  background-image:url("https://s29.postimg.org/4gm5j6fg7/Background.png");
+}
+
 .refreshButton {border-radius:8px;background-color:#0B0947;color:white}
 .checkOutButton{
   text-align:center;
@@ -102,13 +106,15 @@
   color:white;
   font-size:20px;
   display:flex;
-  align:center;}
+  align:center;
+}
 
 .homeImage{
   text-align:center;
   margin:auto;
   display:flex;
-  align:center;}
+  align:center;
+}
 
 .zoom-pane {
   width: 100% !important;
