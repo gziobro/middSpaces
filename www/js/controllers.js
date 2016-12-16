@@ -3,14 +3,6 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -46,25 +38,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('addData',function($scope, $stateParams, checkin, $ionicPopup){
-  //$scope.data = checkin.all();
-  //{
-    //console.log($scope.data);
-    //space: ' ',
-  //  open: true
-  //}
   $scope.submitting = false;
   $scope.submit = function(event){
-    //console.log(event);
     $scope.submitting = true;
     $scope.data = {
       id: event.srcElement.id,
       open: false
     }
     checkin.update($scope.data).then(function(){
-      //$scope.data = {
-      //  id: event.srcElement.id,
-      //  open: false
-      //}
       $scope.submitting = false;
       console.log($scope.data.open);
       if ($scope.data.open == false){
@@ -81,7 +62,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('checkout', function($scope, $stateParams, checkin, $ionicPopup){
-  //$scope.data = checkin.all();
   $scope.submitting = false;
   $scope.checkingout = function(event){
     $scope.data = {

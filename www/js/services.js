@@ -81,18 +81,11 @@ angular.module('starter.services', [])
         deferred.resolve(resp.data);
         console.log(resp.data);
       });
-      //console.log();
-      //document.getElementById("1").style.backgroundColor = "#E31A1C";
       document.getElementById(100).disabled=true;
       console.log(document.getElementById(100));
       return deferred.promise;
     },
     Refresh: function(data){
-      //console.log(floorID);
-      //console.log(everything);
-      //console.log(data);
-      //console.log(data.$$state);
-      //console.log(data.$$state.value);
       var deferred = $q.defer();
       var IDarray = [];
       var d = data.$$state.value;
@@ -123,9 +116,6 @@ angular.module('starter.services', [])
         };
         console.log(spaceArray);
         for (i=spaceArray[0]-1; i<(spaceArray.length+spaceArray[0]-1); i++){
-          //console.log(document.getElementById(d[i].id));
-          //console.log(i);
-          //console.log(occupied);
           var turnThisSpaceBlue;
           if (everything[i].space==occupied){
             turnThisSpaceBlue=i;
@@ -147,10 +137,12 @@ angular.module('starter.services', [])
           console.log(document.getElementById(everything[turnThisSpaceBlue].id));
           document.getElementById(everything[turnThisSpaceBlue].id).style.backgroundColor = "#0B0947";
         };
+        if (occupied !=""){
+          for (i=spaceArray[0]-1; i<(spaceArray.length+spaceArray[0]-1); i++){
+            document.getElementById(everything[i].id).disabled=true;
+          };
+        };
       });
-
-
-      //console.log("end loop");
       return deferred.promise;
     },
     setFloor: function(data){
